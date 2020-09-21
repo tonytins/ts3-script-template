@@ -13,7 +13,7 @@ This project is designed as a Visual Studio template for to get you straight int
 
 ## License
 
-This project is licensed under the MIT license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL v2.0 license - see the [LICENSE](LICENSE) file for details.
 
 ## Disclaimer
 
