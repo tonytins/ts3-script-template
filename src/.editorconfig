@@ -12,60 +12,71 @@ trim_trailing_whitespace = true
 # VB and C# files
 [*.{vb,cs}]
 # avoid this. unless absolutely necessary
-dotnet_style_qualification_for_field                                     = false : suggestion
-dotnet_style_qualification_for_property                                  = false : suggestion
-dotnet_style_qualification_for_method                                    = false : suggestion
-dotnet_style_qualification_for_event                                     = false : suggestion
+dotnet_style_qualification_for_field                                       = false : suggestion
+dotnet_style_qualification_for_property                                    = false : suggestion
+dotnet_style_qualification_for_method                                      = false : suggestion
+dotnet_style_qualification_for_event                                       = false : suggestion
 
 # use language keywords instead of BCL types
-dotnet_style_predefined_type_for_locals_parameters_members               = true : suggestion
-dotnet_style_predefined_type_for_member_access                           = true : suggestion
+dotnet_style_predefined_type_for_locals_parameters_members                 = true : suggestion
+dotnet_style_predefined_type_for_member_access                             = true : suggestion
 
 # Use camel_case for or internal constant fields
-dotnet_naming_rule.constant_fields_should_be_pascal_case.severity        = suggestion
-dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols         = constant_fields
-dotnet_naming_rule.constant_fields_should_be_pascal_case.style           = pascal_case_style
+dotnet_naming_rule.constant_fields_should_be_pascal_case.severity          = suggestion
+dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols           = constant_fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.style             = pascal_case_style
 
-dotnet_naming_symbols.constant_fields.applicable_kinds                   = field
-dotnet_naming_symbols.constant_fields.required_modifiers                 = const
+dotnet_naming_symbols.constant_fields.applicable_kinds                     = field
+dotnet_naming_symbols.constant_fields.required_modifiers                   = const
 
-dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
+dotnet_naming_style.pascal_case_style.capitalization                       = pascal_case
 
 # Comment this group and uncomment out the next group if you don't want _ prefixed fields.
 
-# internal and fields should be _camelCase
-dotnet_naming_rule.camel_case_for_private_internal_fields.severity       = suggestion
-dotnet_naming_rule.camel_case_for_private_internal_fields.symbols        = private_internal_fields
-dotnet_naming_rule.camel_case_for_private_internal_fields.style          = sims3_style
+# protected fields should be kPascalCase
+dotnet_naming_rule.kPascalCase_for_protected_fields.severity               = suggestion
+dotnet_naming_rule.kPascalCase_for_protected_fields.symbols                = protected_internal_fields
+dotnet_naming_rule.kPascalCase_for_protected_fields.style                  = sims3_style
 
-dotnet_naming_symbols.private_internal_fields.applicable_kinds           = field
-dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = private, internal
+dotnet_naming_symbols.protected_internal_fields.applicable_kinds           = field
+dotnet_naming_symbols.protected_internal_fields.applicable_accessibilities = protected_internal
 
-# Used for Sims 3 tuning mods
-dotnet_naming_style.sims3_style.required_prefix          = k
-dotnet_naming_style.sims3_style.capitalization           = first_word_upper
+dotnet_naming_style.sims3_style.required_prefix                            = k
+dotnet_naming_style.sims3_style.capitalization                             = pascal_case
+
+# private static fields should be sPascalCase
+dotnet_naming_rule.sPascalCase_for_static_fields.severity                  = suggestion
+dotnet_naming_rule.sPascalCase_for_static_fields.symbols                   = static_internal_fields
+dotnet_naming_rule.sPascalCase_for_static_fields.style                     = sims3_static
+
+dotnet_naming_symbols.static_internal_fields.required_modifiers            = static
+dotnet_naming_symbols.static_internal_fields.applicable_kinds              = field
+dotnet_naming_symbols.static_internal_fields.applicable_accessibilities    = private
+
+dotnet_naming_style.sims3_static.required_prefix                           = s
+dotnet_naming_style.sims3_static.capitalization                            = pascal_case
 
 # Public members must be capitalized
-dotnet_naming_rule.public_members_must_be_capitalized.symbols            = public_symbols
-dotnet_naming_symbols.public_symbols.applicable_kinds                    = property,method,field,event,delegate
-dotnet_naming_symbols.public_symbols.applicable_accessibilities          = public
+dotnet_naming_rule.public_members_must_be_capitalized.symbols              = public_symbols
+dotnet_naming_symbols.public_symbols.applicable_kinds                      = property,method,field,event,delegate
+dotnet_naming_symbols.public_symbols.applicable_accessibilities            = public
 
-dotnet_naming_rule.public_members_must_be_capitalized.style              = first_word_upper_case_style
-dotnet_naming_style.first_word_upper_case_style.capitalization           = first_word_upper
+dotnet_naming_rule.public_members_must_be_capitalized.style                = first_word_upper_case_style
+dotnet_naming_style.first_word_upper_case_style.capitalization             = first_word_upper
 
-dotnet_naming_rule.public_members_must_be_capitalized.severity           = suggestion
+dotnet_naming_rule.public_members_must_be_capitalized.severity             = suggestion
 
 # Code style defaults
-dotnet_sort_system_directives_first                                      = true
-csharp_preserve_single_line_blocks                                       = true
-csharp_preserve_single_line_statements                                   = false
+dotnet_sort_system_directives_first                                        = true
+csharp_preserve_single_line_blocks                                         = true
+csharp_preserve_single_line_statements                                     = false
 
 # Expression-level preferences
-dotnet_style_object_initializer                                          = true : suggestion
-dotnet_style_collection_initializer                                      = true : suggestion
-dotnet_style_explicit_tuple_names                                        = true : suggestion
-dotnet_style_coalesce_expression                                         = true : suggestion
-dotnet_style_null_propagation                                            = true : suggestion
+dotnet_style_object_initializer                                            = true : suggestion
+dotnet_style_collection_initializer                                        = true : suggestion
+dotnet_style_explicit_tuple_names                                          = true : suggestion
+dotnet_style_coalesce_expression                                           = true : suggestion
+dotnet_style_null_propagation                                              = true : suggestion
 
 [*.cs]
 # New line preferences
@@ -128,4 +139,4 @@ csharp_space_between_parentheses                                         = false
 csharp_space_between_square_brackets                                     = false
 
 # CA1815: Override equals and operator equals on value types
-dotnet_diagnostic.CA1815.severity = silent
+dotnet_diagnostic.CA1815.severity                                        = silent
