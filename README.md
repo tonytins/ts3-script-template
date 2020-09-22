@@ -2,7 +2,7 @@
 
 ![.NET](https://github.com/tonytins/ts3scriptingtemplate/workflows/.NET/badge.svg)
 
-This project is designed as a Visual Studio template for to get you straight into creating scripting mods for The Sims 3.
+This project is designed as a Visual Studio template to get people straight into creating scripting mods for The Sims 3. This includes a basic hello world-like example from [Sims Wiki](http://simswiki.info/wiki.php?title=Tutorial:Sims_3_Pure_Scripting_Modding).
 
 ## Requirements
 
@@ -10,6 +10,7 @@ This project is designed as a Visual Studio template for to get you straight int
 
 * Visual Studio
   * .NET desktop workload
+* TS3: Patch 1.69
 
 ## License
 

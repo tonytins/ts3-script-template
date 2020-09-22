@@ -56,6 +56,17 @@ dotnet_naming_symbols.static_internal_fields.applicable_accessibilities    = pri
 dotnet_naming_style.sims3_static.required_prefix                           = s
 dotnet_naming_style.sims3_static.capitalization                            = pascal_case
 
+# all other fields should be _camelCase
+dotnet_naming_rule.camel_case_for_private_internal_fields.severity         = suggestion
+dotnet_naming_rule.camel_case_for_private_internal_fields.symbols          = private_internal_fields
+dotnet_naming_rule.camel_case_for_private_internal_fields.style            = camel_case_underscore_style
+
+dotnet_naming_symbols.private_internal_fields.applicable_kinds             = field
+dotnet_naming_symbols.private_internal_fields.applicable_accessibilities   = private, internal
+
+dotnet_naming_style.camel_case_underscore_style.required_prefix            = _
+dotnet_naming_style.camel_case_underscore_style.capitalization             = camel_case
+
 # Public members must be capitalized
 dotnet_naming_rule.public_members_must_be_capitalized.symbols              = public_symbols
 dotnet_naming_symbols.public_symbols.applicable_kinds                      = property,method,field,event,delegate
