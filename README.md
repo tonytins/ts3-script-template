@@ -10,7 +10,7 @@ This project is designed as a Visual Studio template to get people straight into
 
 * Visual Studio
   * .NET desktop workload
-* TS3: Patch 1.69
+* TS3: Patch 1.69 (Origin)
 
 ## License
 

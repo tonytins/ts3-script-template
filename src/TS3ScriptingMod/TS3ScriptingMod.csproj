@@ -1,105 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FB422E7-027E-4A66-9EB3-4953EA67431F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TS3ScriptingMod</RootNamespace>
-    <AssemblyName>TS3ScriptingMod</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Pausinator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ScriptCore">
-      <HintPath>TS3Core\ScriptCore.dll</HintPath>
-    </Reference>
-    <Reference Include="SimIFace">
-      <HintPath>TS3Core\SimIFace.dll</HintPath>
-    </Reference>
-    <Reference Include="Sims3GameplayObjects">
-      <HintPath>TS3Core\Sims3GameplayObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="Sims3GameplaySystems">
-      <HintPath>TS3Core\Sims3GameplaySystems.dll</HintPath>
-    </Reference>
-    <Reference Include="Sims3Metadata">
-      <HintPath>TS3Core\Sims3Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="Sims3StoreObjects">
-      <HintPath>TS3Core\Sims3StoreObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UI">
-      <HintPath>TS3Core\UI.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>TS3Core\mscorlib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="XML\S3_simsmod.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\mscorlib.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\ScriptCore.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\SimIFace.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\Sims3GameplayObjects.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\Sims3GameplaySystems.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\Sims3Metadata.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\Sims3StoreObjects.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\System.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\System.Xml.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TS3Core\UI.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net20</TargetFramework>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <PlatformTarget>x86</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <PlatformTarget>x86</PlatformTarget>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="mscorlib">
+            <HintPath>TS3Core\mscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="ScriptCore">
+            <HintPath>TS3Core\ScriptCore.dll</HintPath>
+        </Reference>
+        <Reference Include="SimIFace">
+            <HintPath>TS3Core\SimIFace.dll</HintPath>
+        </Reference>
+        <Reference Include="Sims3GameplayObjects">
+            <HintPath>TS3Core\Sims3GameplayObjects.dll</HintPath>
+        </Reference>
+        <Reference Include="Sims3GameplaySystems">
+            <HintPath>TS3Core\Sims3GameplaySystems.dll</HintPath>
+        </Reference>
+        <Reference Include="Sims3Metadata">
+            <HintPath>TS3Core\Sims3Metadata.dll</HintPath>
+        </Reference>
+        <Reference Include="Sims3StoreObjects">
+            <HintPath>TS3Core\Sims3StoreObjects.dll</HintPath>
+        </Reference>
+        <Reference Include="UI">
+            <HintPath>TS3Core\UI.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="XML\S3_simsmod.xml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
 </Project>
